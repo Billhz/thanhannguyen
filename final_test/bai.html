@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="" id="soA" />
+    <input type="number" name="" id="soB" />
+    <button onclick="test()">Tinh Tong</button>
+
+    <script>
+      function test() {
+        var A = document.getElementById("soA").value;
+        var B = document.getElementById("soB").value;
+        var soNT;
+        var sum = 0;
+        if (A < 2) {
+          A = 2;
+        }
+        for (var i = A; i <= B; i++) {
+          soNT = 1;
+          for (var j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+              soNT = 0;
+              break;
+            }
+          }
+          if (soNT == 1) {
+            sum = sum + i;
+            document.write(i + "<br>");
+          }
+        }
+        document.write("Tong so NT : " + sum);
+      }
+    </script>
+  </body>
+</html>
